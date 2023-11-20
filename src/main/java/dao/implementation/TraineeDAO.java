@@ -5,6 +5,7 @@ import domain.Trainee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import utils.DataSource;
+import utils.exception.TraineeNotFoundException;
 
 import java.util.*;
 
@@ -25,31 +26,43 @@ public class TraineeDAO implements BaseDAO<Trainee> {
     }
 
     @Override
-    public Optional<Trainee> readById(Long id) {
+    public Trainee readById(Long id) {
         Map<Long, Trainee> traineeMap = dataSource.readAllTrainee();
-        if (traineeMap.containsKey(id)) {
-            return Optional.of(traineeMap.get(id));
-        }
-        throw new RuntimeException();
+        return traineeMap.get(id);
     }
 
     @Override
     public Trainee create(Trainee entity) {
-        return null;
+        Long id = entity.getId();
+        Map<Long, Trainee> traineeMap = dataSource.readAllTrainee();
+        traineeMap.put(id, entity);
+        if (existById(id)) {
+            return entity;
+        }
+        throw new TraineeNotFoundException(entity.getId());
     }
 
     @Override
     public Trainee update(Trainee entity) {
-        return null;
+        Long id = entity.getId();
+        Map<Long, Trainee> traineeMap = dataSource.readAllTrainee();
+        traineeMap.put(id, entity);
+        return entity;
     }
 
     @Override
     public boolean deleteById(Long id) {
-        return false;
+        Map<Long, Trainee> traineeMap = dataSource.readAllTrainee();
+        if (existById(id)) {
+            traineeMap.remove(id);
+            return true;
+        }
+        throw new TraineeNotFoundException(id);
     }
 
     @Override
     public boolean existById(Long id) {
-        return false;
+        Map<Long, Trainee> traineeMap = dataSource.readAllTrainee();
+        return traineeMap.containsKey(id);
     }
 }

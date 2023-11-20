@@ -5,11 +5,11 @@ import domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import utils.DataSource;
+import utils.exception.UserNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @Repository
 public class UserDAO implements BaseDAO<User> {
@@ -29,27 +29,54 @@ public class UserDAO implements BaseDAO<User> {
     }
 
     @Override
-    public Optional<User> readById(Long id) {
-        return Optional.empty();
+    public User readById(Long id) {
+        Map<Long, User> userMap = dataSource.readAllUser();
+        if (userMap != null) {
+            User user = userMap.get(id);
+            if (user != null) {
+                return user;
+            }
+        }
+        throw new UserNotFoundException(id);
+
     }
 
     @Override
     public User create(User entity) {
-        return null;
+        Map<Long, User> userMap = dataSource.readAllUser();
+        userMap.put(entity.getId(), entity);
+        User user = userMap.get(entity.getId());
+        if (user != null) {
+            return user;
+        }
+        throw new RuntimeException("This user can not be registered");
     }
 
     @Override
     public User update(User entity) {
-        return null;
+        Long id = entity.getId();
+        Map<Long, User> userMap = dataSource.readAllUser();
+        if (existById(id)) {
+            userMap.put(id, entity);
+            return entity;
+        } else {
+            throw new UserNotFoundException(id);
+        }
     }
 
     @Override
     public boolean deleteById(Long id) {
-        return false;
+        Map<Long, User> userMap = dataSource.readAllUser();
+        if (existById(id)) {
+            userMap.remove(id);
+            return true;
+        }
+        throw new UserNotFoundException(id);
     }
 
     @Override
     public boolean existById(Long id) {
-        return false;
+        Map<Long, User> userMap = dataSource.readAllUser();
+        return userMap.containsKey(id);
     }
 }

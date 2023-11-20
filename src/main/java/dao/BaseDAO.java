@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface BaseDAO<T> {
     List<T> readAll();
 
-    Optional<T> readById(Long id);
+    T readById(Long id);
 
     T create(T entity);
 

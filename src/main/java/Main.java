@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
         Facade facade = context.getBean(Facade.class);
-        for (User e : facade.readAllUser()) {
-            System.out.println(e.toString());
-        }
+        facade.UserCRUD();
+//        facade.TraineeCRUD();
+//        facade.TrainingCRUD();
     }
 }
