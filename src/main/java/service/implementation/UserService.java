@@ -2,7 +2,6 @@ package service.implementation;
 
 import dao.implementation.UserDAO;
 import domain.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.BaseService;
 import utils.exception.ValidatorException;
@@ -16,7 +15,6 @@ public class UserService implements BaseService<User> {
     private final UserDAO userDAO;
     private final UserErrorValidator userErrorValidator;
 
-    @Autowired
     public UserService(UserDAO userDAO, UserErrorValidator userErrorValidator) {
         this.userErrorValidator = userErrorValidator;
         this.userDAO = userDAO;

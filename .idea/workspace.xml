@@ -178,7 +178,7 @@
       <workItem from="1700308584625" duration="6369000" />
       <workItem from="1700404992382" duration="2169000" />
       <workItem from="1700457025273" duration="3974000" />
-      <workItem from="1700508489894" duration="1177000" />
+      <workItem from="1700508489894" duration="3072000" />
     </task>
     <servers />
   </component>
@@ -188,21 +188,14 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/service/implementation/UserServiceTest.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/service/implementation/UserServiceTest.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/test/java/service/implementation/UserServiceTest.java</url>
-          <line>21</line>
-          <properties field="userService" class="service.implementation.UserServiceTest" />
-          <option name="timeStamp" value="3" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>7</line>
+          <properties class="Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
