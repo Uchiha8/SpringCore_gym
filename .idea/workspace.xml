@@ -51,15 +51,8 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.UserServiceTest.readAll">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="untitled.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDAOTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TraineeServiceTest">
+    <configuration name="TraineeServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -72,7 +65,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;dao.implementation.UserDAOTest&quot;" />
+            <option value="&quot;service.implementation.TraineeServiceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -82,7 +75,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserDAOTest.readAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TrainerServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -95,7 +88,53 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;dao.implementation.UserDAOTest.readAll&quot;" />
+            <option value="&quot;service.implementation.TrainerServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TrainingServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;service.implementation.TrainingServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TrainingServiceTest.readAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;service.implementation.TrainingServiceTest.readAll&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -128,36 +167,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserServiceTest.readAll" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--scan" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;service.implementation.UserServiceTest.readAll&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.UserServiceTest.readAll" />
+        <item itemvalue="Gradle.TraineeServiceTest" />
+        <item itemvalue="Gradle.TrainerServiceTest" />
+        <item itemvalue="Gradle.TrainingServiceTest" />
+        <item itemvalue="Gradle.TrainingServiceTest.readAll" />
         <item itemvalue="Gradle.UserServiceTest" />
-        <item itemvalue="Gradle.UserDAOTest.readAll" />
-        <item itemvalue="Gradle.UserDAOTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -179,6 +195,9 @@
       <workItem from="1700404992382" duration="2169000" />
       <workItem from="1700457025273" duration="3974000" />
       <workItem from="1700508489894" duration="3072000" />
+      <workItem from="1700551951845" duration="5398000" />
+      <workItem from="1700635290662" duration="4035000" />
+      <workItem from="1700645777678" duration="8971000" />
     </task>
     <servers />
   </component>
