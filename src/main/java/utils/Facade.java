@@ -3,6 +3,8 @@ package utils;
 import domain.Trainee;
 import domain.Training;
 import domain.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import service.implementation.*;
@@ -13,6 +15,9 @@ import java.util.List;
 
 @Component
 public class Facade {
+
+    private static Logger logger = LogManager.getLogger(Facade.class);
+
     private final UserService userService;
     private final TraineeService traineeService;
     private final TrainerService trainerService;
@@ -28,8 +33,16 @@ public class Facade {
         this.trainingService = trainingService;
     }
 
+
+    public void readAll() {
+        List<User> usersList = userService.readAll();
+        logger.info("List of Users\n");
+        logger.info(usersList.toString());
+
+    }
+
+
     public void UserCRUD() {
-        System.out.println("============/READ ALL USER/===========");
         List<User> userList = userService.readAll();
         for (User u : userList) {
             System.out.println(u.toString());

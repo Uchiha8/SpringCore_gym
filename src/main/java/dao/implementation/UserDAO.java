@@ -10,6 +10,7 @@ import utils.exception.UserNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @Repository
 public class UserDAO implements BaseDAO<User> {
@@ -44,6 +45,7 @@ public class UserDAO implements BaseDAO<User> {
     @Override
     public User create(User entity) {
         Map<Long, User> userMap = dataSource.readAllUser();
+        generateUsernamePassword(entity);
         userMap.put(entity.getId(), entity);
         User user = userMap.get(entity.getId());
         if (user != null) {
@@ -78,5 +80,29 @@ public class UserDAO implements BaseDAO<User> {
     public boolean existById(Long id) {
         Map<Long, User> userMap = dataSource.readAllUser();
         return userMap.containsKey(id);
+    }
+
+    private void generateUsernamePassword(User user) {
+        String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder password = new StringBuilder();
+        Random random = new Random();
+        for (int i = 1; i <= 10; i++) {
+            password.append(characters.charAt(random.nextInt(characters.length())));
+        }
+        user.setPassword(password.toString());
+        String username = user.getFirstName() + "." + user.getLastName();
+        Map<Long, User> userMap = dataSource.readAllUser();
+        boolean status = true;
+        List<User> userList = readAll();
+        for (User u : userList) {
+            int ser = 1;
+            String temp = u.getFirstName() + "." + u.getLastName();
+            if (temp.equals(username)) {
+                username = username + ser;
+            } else {
+                ser++;
+            }
+        }
+        user.setUsername(username);
     }
 }
